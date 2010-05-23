@@ -92,18 +92,37 @@ def compute(K):
 #print isPrime(14087),period(14087)
 val = 10000
 
+def getFactors(a):
+    num = a
+    i = 3
+    if a % 2 == 0:
+        factors = [2]
+    else:
+        factors = []
+    while i <= num:
+        if num % i == 0:
+            factors.append(i)
+            num /= i
+            while num % i == 0:
+                num /= i
+        i+=2
+        while not isPrime(i):
+            i+=2
+
+    return factors
+
 #a = compute(val)
 a = []
 for i in range(7,100001):
     if isPrime(i):
         found = False
-        for j in range(1,500):
-            if does_div(10**j,i):
-                found = True
-                break
+        factors = getFactors(multOrder(10,i))
+        if factors == [5] or factors == [2] or factors == [2,5]:
+            print i
+            found = True
         if not found:
             a.append(i)
 
-print sum(a)
+print sum(a)+5+3+2
 
 
