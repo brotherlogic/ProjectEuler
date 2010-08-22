@@ -10,7 +10,7 @@ for i in range(2,len(primes)):
 
 def find(p1,p2):    
     mult = pow(10,1+int(log10(p1)))
-    i = int(mult)
+    i = 1
     while (i*mult+p1) % p2 != 0:
         i += 1
     return p1,i
