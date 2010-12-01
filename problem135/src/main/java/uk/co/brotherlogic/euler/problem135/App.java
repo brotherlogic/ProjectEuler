@@ -12,10 +12,9 @@ public class App
       long sTime = System.currentTimeMillis();
       App app = new App();
       int count = 0;
-      for (int i = 1; i < 1000000; i++)
+      for (int i = 1; i < 100000; i++)
       {
-         System.out.println(i);
-         if (app.getCount(i) == 10)
+         if (app.getCount(i) == 1155)
             count++;
       }
       System.out.println(count);
